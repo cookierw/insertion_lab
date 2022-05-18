@@ -17,7 +17,19 @@ public class CustomLinkedList<T> {
      * @param data
      */
     public void add(T data){
-        // TODO: Complete me
+        Node<T> newNode = new Node<>(data);
+        newNode.next = null;
+
+        if(size == 0){
+            first = newNode;
+            last = newNode;
+            size++;
+            return;
+        }
+
+        last.next = newNode;
+        last = newNode;
+        size++;
     }
 
     public boolean isEmpty(){
